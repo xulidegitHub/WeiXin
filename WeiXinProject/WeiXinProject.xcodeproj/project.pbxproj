@@ -26,6 +26,7 @@
 		630E73061EB04FB8001ED289 /* XLFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E73031EB04FB8001ED289 /* XLFriendsViewController.m */; };
 		630E730C1EB07CC1001ED289 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E730B1EB07CC1001ED289 /* UIView+Frame.m */; };
 		630E730F1EB082D1001ED289 /* FriendsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E730E1EB082D1001ED289 /* FriendsHeadView.m */; };
+		635193801EE5382300BD9CE1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 6351937F1EE5382300BD9CE1 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		630E730B1EB07CC1001ED289 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		630E730D1EB082D1001ED289 /* FriendsHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsHeadView.h; sourceTree = "<group>"; };
 		630E730E1EB082D1001ED289 /* FriendsHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsHeadView.m; sourceTree = "<group>"; };
+		6351937E1EE5382300BD9CE1 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		6351937F1EE5382300BD9CE1 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		D354CADBC4B948E93F51A3C5 /* Pods-WeiXinProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiXinProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiXinProject/Pods-WeiXinProject.debug.xcconfig"; sourceTree = "<group>"; };
 		D4E6770088FCAA99DC489719 /* Pods-WeiXinProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiXinProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiXinProject/Pods-WeiXinProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +150,7 @@
 		630E72961EB03E27001ED289 /* WeiXinProject */ = {
 			isa = PBXGroup;
 			children = (
+				6351937D1EE5380300BD9CE1 /* Classes */,
 				630E73071EB07501001ED289 /* Until */,
 				630E72E61EB042F7001ED289 /* Message */,
 				630E72E11EB042EA001ED289 /* AddressList */,
@@ -422,6 +426,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		6351937D1EE5380300BD9CE1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6351937E1EE5382300BD9CE1 /* Person.h */,
+				6351937F1EE5382300BD9CE1 /* Person.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		A1A0CA98A012CE604285830F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +629,7 @@
 			files = (
 				630E730C1EB07CC1001ED289 /* UIView+Frame.m in Sources */,
 				630E72F91EB04376001ED289 /* XLAddressListViewController.m in Sources */,
+				635193801EE5382300BD9CE1 /* Person.m in Sources */,
 				630E72D31EB04236001ED289 /* XLBaseViewController.m in Sources */,
 				630E729F1EB03E27001ED289 /* ViewController.m in Sources */,
 				630E730F1EB082D1001ED289 /* FriendsHeadView.m in Sources */,
