@@ -1,0 +1,7 @@
+
+ -> WeiXin -> WeiXin (0.0.1)
+    - ERROR | [OSX] xcodebuild: Returned an unsuccessful exit code. You can use `--verbose` for more information.
+    - NOTE  | [OSX] xcodebuild:  clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+[!] WeiXin did not pass validation, due to 1 error.
+You can use the `--no-clean` option to inspect any issue.
