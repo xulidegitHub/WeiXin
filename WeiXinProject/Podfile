@@ -2,14 +2,15 @@
 # platform :ios, '9.0'
  target 'WeiXinProject' do
     pod 'AFNetworking'
-    pod 'Mantle'
     pod 'SDWebImage'
     pod 'MJRefresh'
-    pod 'LeNetworkFrame'
     pod 'LFDBusFrameWork'
     pod 'Masonry'
+    pod "textFrameWork"
+    pod “NetworkFrameWork”
 end
 source 'http://gitlab-jr.letv.cn/iosteam/lefinancepods.git'
 source 'https://github.com/CocoaPods/Specs.git'
+source ‘https://git.oschina.net/hahah_/specresposity.git’
 
 

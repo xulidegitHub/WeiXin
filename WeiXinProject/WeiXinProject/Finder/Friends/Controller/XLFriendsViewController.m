@@ -10,11 +10,24 @@
 #import "GlobalDefines.h"
 #import "UIView+Frame.h"
 #import "FriendsHeadView.h"
+#import "FriendsCellTableViewCell.h"
+#import "FriendsListModel.h"
+#import "XLNetworkSampleModel.h"
 @interface XLFriendsViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *friendsTabView;
-@end
+@property (nonatomic,strong)FriendsListModel *frinedsListModel;
+@property (nonatomic,strong)singleFriendMessageModel *singleFriendMesModel;
+@property (nonatomic,strong) NSArray *dataArray;
+@end   
 
 @implementation XLFriendsViewController
+
+-(NSArray*)dataArray{
+    if (!_dataArray) {
+        _dataArray = [NSArray array];
+    }
+    return _dataArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,10 +37,17 @@
    FriendsHeadView *tabHeadView = [[FriendsHeadView alloc]initWithFrame:CGRectMake(0,0,self.friendsTabView.width, 200)];
     tabHeadView.backgroundColor = [UIColor blueColor];
     self.friendsTabView.tableHeaderView = tabHeadView;
+    self.friendsTabView.estimatedRowHeight = 50;
+    self.friendsTabView.rowHeight = UITableViewAutomaticDimension;
     [self.view addSubview:self.friendsTabView];
-    
+    [self request];
 }
 
+-(void)request{
+    self.frinedsListModel = [FriendsListModel modelByTest];
+    self.dataArray = [self.frinedsListModel.page.dataList copy];
+    [self.friendsTabView reloadData];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
   
@@ -38,17 +58,28 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.dataArray.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    FriendsCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellID"];
+        cell = [[FriendsCellTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellID"];
     }
-    cell.textLabel.text = @"你好";
+    [cell setModel:self.dataArray[indexPath.row]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell rowHeghtWithModel:self.dataArray[indexPath.row]];
     return cell;
+}
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.singleFriendMesModel= self.dataArray[indexPath.row];
+    return self.singleFriendMesModel.cellHeight;
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
 }
 /*
 #pragma mark - Navigation
