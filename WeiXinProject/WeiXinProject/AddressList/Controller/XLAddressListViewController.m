@@ -194,6 +194,7 @@
     self.addressTab.delegate = self;
     self.addressTab.dataSource = self;
     self.addressTab.sectionIndexColor =[UIColor redColor];
+    self.addressTab.sectionIndexBackgroundColor = [UIColor clearColor];
     [self.view addSubview:self.addressTab];
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10, 0, [UIScreen mainScreen].bounds.size.width-20,40)];
     [searchBar sizeToFit];
@@ -202,10 +203,7 @@
     [searchBar.layer setBorderColor:[UIColor colorWithRed:229.0/255 green:229.0/255 blue:229.0/255 alpha:1].CGColor];
     [searchBar setDelegate:self];
     [searchBar setKeyboardType:UIKeyboardTypeDefault];
-
     self.addressTab.tableHeaderView = searchBar;
-    self.addressTab.tableHeaderView.backgroundColor = [UIColor redColor];
-    self.addressTab.backgroundColor = [UIColor redColor];
 }
 
 -(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
@@ -235,7 +233,8 @@
     }
     cell.textLabel.text = self.dataArray[indexPath.section][@"sectionList"][indexPath.row][@"name"];
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.dataArray[indexPath.section][@"sectionList"][indexPath.row][@"imageName"]]];
-    cell.imageView.frame = CGRectMake(cell.imageView.frame.origin.x, cell.imageView.frame.origin.y, 40, 40); 
+    cell.imageView.frame = CGRectMake(cell.imageView.frame.origin.x, cell.imageView.frame.origin.y, 40, 40);
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

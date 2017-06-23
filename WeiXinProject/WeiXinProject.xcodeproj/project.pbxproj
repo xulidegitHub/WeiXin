@@ -28,8 +28,17 @@
 		630E730F1EB082D1001ED289 /* FriendsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E730E1EB082D1001ED289 /* FriendsHeadView.m */; };
 		631FEA6C1EF38194004D5C17 /* FriendsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FEA6B1EF38194004D5C17 /* FriendsListModel.m */; };
 		633AE6D81EF22AF4005B4456 /* PicListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633AE6D71EF22AF4005B4456 /* PicListView.m */; };
+		6345C92D1EFCB5A80000B58B /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 6345C92C1EFCB5A80000B58B /* NSString+Common.m */; };
+		6345C9301EFCEEBB0000B58B /* ChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6345C92F1EFCEEBB0000B58B /* ChatModel.m */; };
+		63681F431EFA17A7001CED67 /* MessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63681F411EFA17A7001CED67 /* MessageListCell.m */; };
+		63681F441EFA17A7001CED67 /* MessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63681F421EFA17A7001CED67 /* MessageListCell.xib */; };
+		63681F471EFA1A08001CED67 /* XLMesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63681F461EFA1A08001CED67 /* XLMesDetailViewController.m */; };
+		63681F4A1EFA2552001CED67 /* MessageDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63681F491EFA2552001CED67 /* MessageDetailCell.m */; };
+		63681F4D1EFA4EE1001CED67 /* sendMesBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63681F4C1EFA4EE1001CED67 /* sendMesBottomView.m */; };
+		63681F4F1EFA4EF9001CED67 /* sendMesBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63681F4E1EFA4EF9001CED67 /* sendMesBottomView.xib */; };
 		636CBE851EF0E37A00DD4623 /* FriendsCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CBE841EF0E37A00DD4623 /* FriendsCellTableViewCell.m */; };
 		638E5EA71EF7DF4D000FDB1D /* AddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 638E5EA61EF7DF4D000FDB1D /* AddressModel.m */; };
+		63FAA3741EFB6D6D00D14F75 /* pic.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63FAA3731EFB6D6D00D14F75 /* pic.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,10 +100,25 @@
 		631FEA6B1EF38194004D5C17 /* FriendsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListModel.m; sourceTree = "<group>"; };
 		633AE6D61EF22AF4005B4456 /* PicListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicListView.h; sourceTree = "<group>"; };
 		633AE6D71EF22AF4005B4456 /* PicListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicListView.m; sourceTree = "<group>"; };
+		6345C92B1EFCB5A80000B58B /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
+		6345C92C1EFCB5A80000B58B /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
+		6345C92E1EFCEEBB0000B58B /* ChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatModel.h; sourceTree = "<group>"; };
+		6345C92F1EFCEEBB0000B58B /* ChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatModel.m; sourceTree = "<group>"; };
+		63681F401EFA17A7001CED67 /* MessageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListCell.h; sourceTree = "<group>"; };
+		63681F411EFA17A7001CED67 /* MessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListCell.m; sourceTree = "<group>"; };
+		63681F421EFA17A7001CED67 /* MessageListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageListCell.xib; sourceTree = "<group>"; };
+		63681F451EFA1A08001CED67 /* XLMesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLMesDetailViewController.h; sourceTree = "<group>"; };
+		63681F461EFA1A08001CED67 /* XLMesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLMesDetailViewController.m; sourceTree = "<group>"; };
+		63681F481EFA2552001CED67 /* MessageDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailCell.h; sourceTree = "<group>"; };
+		63681F491EFA2552001CED67 /* MessageDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailCell.m; sourceTree = "<group>"; };
+		63681F4B1EFA4EE1001CED67 /* sendMesBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sendMesBottomView.h; sourceTree = "<group>"; };
+		63681F4C1EFA4EE1001CED67 /* sendMesBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendMesBottomView.m; sourceTree = "<group>"; };
+		63681F4E1EFA4EF9001CED67 /* sendMesBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sendMesBottomView.xib; sourceTree = "<group>"; };
 		636CBE831EF0E37A00DD4623 /* FriendsCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsCellTableViewCell.h; sourceTree = "<group>"; };
 		636CBE841EF0E37A00DD4623 /* FriendsCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsCellTableViewCell.m; sourceTree = "<group>"; };
 		638E5EA51EF7DF4D000FDB1D /* AddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressModel.h; sourceTree = "<group>"; };
 		638E5EA61EF7DF4D000FDB1D /* AddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressModel.m; sourceTree = "<group>"; };
+		63FAA3731EFB6D6D00D14F75 /* pic.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = pic.bundle; sourceTree = "<group>"; };
 		D354CADBC4B948E93F51A3C5 /* Pods-WeiXinProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiXinProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiXinProject/Pods-WeiXinProject.debug.xcconfig"; sourceTree = "<group>"; };
 		D4E6770088FCAA99DC489719 /* Pods-WeiXinProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiXinProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiXinProject/Pods-WeiXinProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +236,7 @@
 				630E72D21EB04236001ED289 /* XLBaseViewController.m */,
 				630E72FA1EB043F0001ED289 /* XLMainViewController.h */,
 				630E72FB1EB043F0001ED289 /* XLMainViewController.m */,
+				63FAA3731EFB6D6D00D14F75 /* pic.bundle */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -358,6 +383,8 @@
 			children = (
 				630E72EB1EB04306001ED289 /* XLMessageViewController.h */,
 				630E72EC1EB04306001ED289 /* XLMessageViewController.m */,
+				63681F451EFA1A08001CED67 /* XLMesDetailViewController.h */,
+				63681F461EFA1A08001CED67 /* XLMesDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -365,6 +392,8 @@
 		630E72E81EB042F7001ED289 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6345C92E1EFCEEBB0000B58B /* ChatModel.h */,
+				6345C92F1EFCEEBB0000B58B /* ChatModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -379,6 +408,14 @@
 		630E72EA1EB042F7001ED289 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				63681F401EFA17A7001CED67 /* MessageListCell.h */,
+				63681F411EFA17A7001CED67 /* MessageListCell.m */,
+				63681F421EFA17A7001CED67 /* MessageListCell.xib */,
+				63681F481EFA2552001CED67 /* MessageDetailCell.h */,
+				63681F491EFA2552001CED67 /* MessageDetailCell.m */,
+				63681F4B1EFA4EE1001CED67 /* sendMesBottomView.h */,
+				63681F4C1EFA4EE1001CED67 /* sendMesBottomView.m */,
+				63681F4E1EFA4EF9001CED67 /* sendMesBottomView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,6 +475,8 @@
 			children = (
 				630E730A1EB07CC1001ED289 /* UIView+Frame.h */,
 				630E730B1EB07CC1001ED289 /* UIView+Frame.m */,
+				6345C92B1EFCB5A80000B58B /* NSString+Common.h */,
+				6345C92C1EFCB5A80000B58B /* NSString+Common.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -560,7 +599,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				630E72AA1EB03E27001ED289 /* LaunchScreen.storyboard in Resources */,
+				63681F441EFA17A7001CED67 /* MessageListCell.xib in Resources */,
+				63681F4F1EFA4EF9001CED67 /* sendMesBottomView.xib in Resources */,
 				630E72A71EB03E27001ED289 /* Assets.xcassets in Resources */,
+				63FAA3741EFB6D6D00D14F75 /* pic.bundle in Resources */,
 				630E72A21EB03E27001ED289 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,14 +680,20 @@
 				630E730C1EB07CC1001ED289 /* UIView+Frame.m in Sources */,
 				630E72F91EB04376001ED289 /* XLAddressListViewController.m in Sources */,
 				630E72D31EB04236001ED289 /* XLBaseViewController.m in Sources */,
+				6345C92D1EFCB5A80000B58B /* NSString+Common.m in Sources */,
 				630E729F1EB03E27001ED289 /* ViewController.m in Sources */,
 				630E730F1EB082D1001ED289 /* FriendsHeadView.m in Sources */,
+				63681F4A1EFA2552001CED67 /* MessageDetailCell.m in Sources */,
 				636CBE851EF0E37A00DD4623 /* FriendsCellTableViewCell.m in Sources */,
 				630E72ED1EB04306001ED289 /* XLMessageViewController.m in Sources */,
 				630E72A51EB03E27001ED289 /* WeiXinProject.xcdatamodeld in Sources */,
 				630E72FC1EB043F0001ED289 /* XLMainViewController.m in Sources */,
+				63681F4D1EFA4EE1001CED67 /* sendMesBottomView.m in Sources */,
 				633AE6D81EF22AF4005B4456 /* PicListView.m in Sources */,
+				63681F431EFA17A7001CED67 /* MessageListCell.m in Sources */,
+				6345C9301EFCEEBB0000B58B /* ChatModel.m in Sources */,
 				630E73061EB04FB8001ED289 /* XLFriendsViewController.m in Sources */,
+				63681F471EFA1A08001CED67 /* XLMesDetailViewController.m in Sources */,
 				630E729C1EB03E27001ED289 /* AppDelegate.m in Sources */,
 				630E72F61EB04346001ED289 /* XLMineViewController.m in Sources */,
 				631FEA6C1EF38194004D5C17 /* FriendsListModel.m in Sources */,

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="sendMesBottomView">
+            <rect key="frame" x="0.0" y="0.0" width="365" height="43"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SenderVoiceNodePlaying" translatesAutoresizingMaskIntoConstraints="NO" id="eAA-hc-tlR">
+                    <rect key="frame" x="2" y="11.5" width="20" height="20"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SenderVoiceNodePlaying" translatesAutoresizingMaskIntoConstraints="NO" id="Oa5-A8-1GG">
+                    <rect key="frame" x="343" y="11.5" width="20" height="20"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SenderVoiceNodePlaying" translatesAutoresizingMaskIntoConstraints="NO" id="vXf-Dl-Y5F">
+                    <rect key="frame" x="321" y="11" width="20" height="20"/>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xEh-kG-NNm">
+                    <rect key="frame" x="30" y="6" width="285" height="27"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eAA-hc-tlR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="4Gl-PT-IM6"/>
+                <constraint firstItem="xEh-kG-NNm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="8Lb-je-pym"/>
+                <constraint firstAttribute="bottom" secondItem="xEh-kG-NNm" secondAttribute="bottom" constant="10" id="FCF-kp-C3s"/>
+                <constraint firstItem="xEh-kG-NNm" firstAttribute="leading" secondItem="eAA-hc-tlR" secondAttribute="trailing" constant="8" id="S3O-23-d4I"/>
+                <constraint firstAttribute="trailing" secondItem="Oa5-A8-1GG" secondAttribute="trailing" constant="2" id="bLG-Fn-UWV"/>
+                <constraint firstItem="Oa5-A8-1GG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eot-mx-1jO"/>
+                <constraint firstItem="Oa5-A8-1GG" firstAttribute="leading" secondItem="vXf-Dl-Y5F" secondAttribute="trailing" constant="2" id="fJ8-qD-074"/>
+                <constraint firstItem="vXf-Dl-Y5F" firstAttribute="leading" secondItem="xEh-kG-NNm" secondAttribute="trailing" constant="6" id="ftX-YP-ATk"/>
+                <constraint firstItem="eAA-hc-tlR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="j6O-gi-cEp"/>
+                <constraint firstItem="vXf-Dl-Y5F" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tHY-KF-68U"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="inputTextView" destination="xEh-kG-NNm" id="pZx-tN-wip"/>
+                <outlet property="leftTip" destination="eAA-hc-tlR" id="Gke-QH-sIp"/>
+                <outlet property="rightSecondTip" destination="vXf-Dl-Y5F" id="u3q-N8-S9A"/>
+                <outlet property="rightTip" destination="Oa5-A8-1GG" id="1FW-KL-wvx"/>
+            </connections>
+            <point key="canvasLocation" x="8.5" y="-223.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="SenderVoiceNodePlaying" width="20" height="20"/>
+    </resources>
+</document>

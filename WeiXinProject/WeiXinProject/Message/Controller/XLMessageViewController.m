@@ -7,9 +7,10 @@
 //
 
 #import "XLMessageViewController.h"
-
-@interface XLMessageViewController ()
-
+#import "MessageListCell.h"
+#import "XLMesDetailViewController.h"
+@interface XLMessageViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) UITableView *chatListTab;
 @end
 
 @implementation XLMessageViewController
@@ -17,6 +18,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.chatListTab = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
+    self.chatListTab.delegate = self;
+    self.chatListTab.dataSource = self;
+    [self.view addSubview:self.chatListTab];
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MessageListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    if (!cell) {
+        cell = [[NSBundle mainBundle] loadNibNamed:@"MessageListCell" owner:self options:nil].lastObject;
+    }
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    XLMesDetailViewController *vc = [[XLMesDetailViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
