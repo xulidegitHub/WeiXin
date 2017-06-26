@@ -106,7 +106,7 @@
     [self.mesBottomView.inputTextView resignFirstResponder];
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
     if ([text isEqualToString:@"\n"]){ //判断输入的字是否是回车，即按下return
         ChatModel *chatModel = [[ChatModel alloc] init];
         chatModel.chatContent =textView.text;
@@ -118,6 +118,7 @@
     }
     
     return YES;
+
 }
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
