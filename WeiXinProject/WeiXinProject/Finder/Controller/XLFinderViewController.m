@@ -21,7 +21,7 @@
                        @{
                           @"rowData":@[
                                   @{
-                                      @"imageName":@"",
+                                      @"imageName":@"ff_IconShowAlbum",
                                       @"title":@"朋友圈"
                                       }
                                   ],
@@ -30,11 +30,11 @@
                        @{
                            @"rowData":@[
                                    @{
-                                       @"imageName":@"",
+                                       @"imageName":@"ff_IconQRCode",
                                        @"title":@"扫一扫"
                                        },
                                    @{
-                                       @"imageName":@"",
+                                       @"imageName":@"ff_IconShake",
                                        @"title":@"摇一摇"
                                        },
                                  ],
@@ -43,11 +43,11 @@
                        @{
                            @"rowData":@[
                                    @{
-                                       @"imageName":@"",
+                                       @"imageName":@"ff_IconLocationService",
                                        @"title":@"附近的人"
                                        },
                                    @{
-                                       @"imageName":@"",
+                                       @"imageName":@"ff_IconBottle",
                                        @"title":@"漂流瓶"
                                        },
                                    ],
@@ -56,11 +56,11 @@
                        @{
                            @"rowData":@[
                                    @{
-                                       @"imageName":@"",
+                                       @"imageName":@"CreditCard_ShoppingBag",
                                        @"title":@"京东购物"
                                        },
                                    @{
-                                       @"imageName":@"",
+                                       @"imageName":@"MoreGame",
                                        @"title":@"游戏"
                                        },
                                    ],
@@ -86,6 +86,7 @@
     self.finderTabView.dataSource = self;
     self.finderTabView.separatorStyle =UITableViewCellSeparatorStyleSingleLine;
     [self.view addSubview:self.finderTabView];
+    self.navigationItem.title = @"发现";
 }
 
 - (void)didReceiveMemoryWarning {

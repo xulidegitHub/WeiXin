@@ -22,16 +22,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     XLFinderViewController *finderVc = [[XLFinderViewController alloc]init];
     UINavigationController *finderNav = [[UINavigationController alloc]initWithRootViewController:finderVc];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor grayColor], NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:tintGreenColor,NSForegroundColorAttributeName, nil]forState:UIControlStateSelected];
     finderNav.tabBarItem.title = @"发现";
+    finderNav.tabBarItem.image = [[UIImage imageNamed:@"tabbar_discover"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    finderNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_discoverHL"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     XLMessageViewController *messageVc = [[XLMessageViewController alloc]init];
     UINavigationController *messageNav = [[UINavigationController alloc]initWithRootViewController:messageVc];
     messageNav.tabBarItem.title = @"消息";
+    messageNav.tabBarItem.image = [[UIImage imageNamed:@"tabbar_mainframe"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    messageNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_mainframeHL"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     XLMineViewController *mineVc = [[XLMineViewController alloc]init];
     UINavigationController *mineNav = [[UINavigationController alloc]initWithRootViewController:mineVc];
     mineNav.tabBarItem.title = @"我的";
+    mineNav.tabBarItem.image = [[UIImage imageNamed:@"tabbar_me"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mineNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_meHL"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     XLAddressListViewController *addressListVc = [[XLAddressListViewController alloc]init];
     UINavigationController *addressNav = [[UINavigationController alloc]initWithRootViewController:addressListVc];
     addressNav.tabBarItem.title = @"通讯录";
+    addressNav.tabBarItem.image = [[UIImage imageNamed:@"tabbar_contacts"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    addressNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_contactsHL"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     XLMainViewController *mainTabbarVc = [[XLMainViewController alloc]init];
     [mainTabbarVc addChildViewController:messageNav];
     [mainTabbarVc addChildViewController:addressNav];

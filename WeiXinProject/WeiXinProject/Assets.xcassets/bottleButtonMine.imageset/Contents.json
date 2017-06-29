@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Image.png",
+      "filename" : "bottleButtonMine.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "bottleButtonMine@2x.png",
       "scale" : "2x"
     },
     {

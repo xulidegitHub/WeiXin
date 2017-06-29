@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface EmojeInputView : UIView
-
+-(void)reloadDataWithArray:(NSArray*)dataArray;
 @end

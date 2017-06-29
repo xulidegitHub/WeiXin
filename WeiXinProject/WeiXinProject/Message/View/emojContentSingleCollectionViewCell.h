@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface emojContentSingleCollectionViewCell : UICollectionViewCell
-
+-(void)setImageWithData:(UIImage*)image andIndex:(NSInteger)index;
 @end

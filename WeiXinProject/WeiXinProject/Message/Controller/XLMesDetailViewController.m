@@ -5,16 +5,23 @@
 //  Created by 徐丽 on 2017/6/21.
 //  Copyright © 2017年 徐丽. All rights reserved.
 //
-
 #import "XLMesDetailViewController.h"
 #import "MessageDetailCell.h"
 #import "sendMesBottomView.h"
 #import "UIView+Frame.h"
 #import "ChatModel.h"
+#import "EmojeInputView.h"
+#import "CorderManager.h"
 @interface XLMesDetailViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate,UITextViewDelegate>
 @property (nonatomic,strong)UITableView *MesDetailTab;
 @property (nonatomic,strong)sendMesBottomView *mesBottomView;
 @property (nonatomic,strong)NSMutableArray *dataArray;
+@property (nonatomic,strong) EmojeInputView *faceView;
+@property (nonatomic,assign) BOOL isSelectedEmoj;
+@property (nonatomic,assign) BOOL isChangeKey;
+@property (nonatomic,assign) float keyBoardHeight;
+@property (nonatomic,strong) NSMutableArray *emojDataArray;
+@property (nonatomic,strong) CorderManager *recorderManager;
 @end
 
 @implementation XLMesDetailViewController
@@ -23,6 +30,18 @@
         _dataArray = [NSMutableArray array];
     }
     return _dataArray;
+}
+
+-(NSMutableArray *)emojDataArray{
+    if (!_emojDataArray) {
+        _emojDataArray = [NSMutableArray array];
+    }
+
+    for (int i=0; i<105; i++) {
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"OriginalExpression.bundle/Expression_%d",i+1]];
+        [_emojDataArray addObject:image];
+    }
+    return _emojDataArray;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,10 +57,65 @@
     self.mesBottomView.backgroundColor = [UIColor grayColor];
     self.mesBottomView.inputTextView.returnKeyType = UIReturnKeySend;
     self.mesBottomView.inputTextView.delegate = self;
+    __weak typeof(self) weakSelf = self;
+    self.mesBottomView.clickEmojBtnBLock = ^(NSInteger index) {
+        if (index==1001) {
+        [weakSelf.mesBottomView.inputTextView resignFirstResponder];
+        weakSelf.mesBottomView.inputTextView.text = @"按住说话";
+        weakSelf.mesBottomView.inputTextView.textAlignment = NSTextAlignmentCenter;
+        weakSelf.mesBottomView.inputTextView.editable = NO;
+//        weakSelf.mesBottomView.inputTextView.userInteractionEnabled = YES;
+//        UIGestureRecognizer  *lognPress = [[UIGestureRecognizer alloc] initWithTarget:weakSelf action:@selector(didClickInputView)];
+//        [weakSelf.mesBottomView.inputTextView addGestureRecognizer:lognPress];
+            [weakSelf didClickRecorderBtn];
+            
+        }else if(index == 1002){
+            weakSelf.isChangeKey = YES;
+            weakSelf.isSelectedEmoj = !weakSelf.isSelectedEmoj;
+            if (weakSelf.isSelectedEmoj) {
+                [weakSelf.mesBottomView.inputTextView resignFirstResponder];
+            }else{
+                [weakSelf.mesBottomView.inputTextView becomeFirstResponder];
+            }
+
+        }else if(index == 1003){
+            [weakSelf didClickInputView];
+        }
+    };
     [self.view addSubview:self.mesBottomView];
     // 2.监听键盘的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHidden:) name:UIKeyboardWillHideNotification object:nil];
   }
+
+-(void)didClickInputView{
+    [self.recorderManager stopRecorder];
+}
+
+-(void)didClickRecorderBtn{
+    
+    self.recorderManager = [[CorderManager alloc]init];
+    [self.recorderManager recorderWithsavePath:@"/Users/xuxuli/Desktop/luyin"];
+}
+
+-(void)keyboardWillShow:(NSNotification *)notification
+{
+    //这样就拿到了键盘的位置大小信息frame，然后根据frame进行高度处理之类的信息
+    CGRect frame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    self.keyBoardHeight = frame.size.height;
+}
+/**
+ *  键盘将要隐藏
+ *
+ *  @param notification 通知
+ */
+-(void)keyboardWillHidden:(NSNotification *)notification
+{
+    CGRect frame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+
+}
+
 
 - (void)keyboardWillChangeFrame:(NSNotification *)note
 {
@@ -55,11 +129,24 @@
     CGFloat transformY = keyboardFrame.origin.y - self.view.frame.size.height;
     // 3.执行动画
     [UIView animateWithDuration:duration animations:^{
-       self.mesBottomView.transform = CGAffineTransformMakeTranslation(0, transformY);
-        self.MesDetailTab.height = CGRectGetMinY(self.mesBottomView.frame);
-
-        
-     }];
+        if (_isChangeKey) {
+            if (self.isSelectedEmoj) {
+                self.faceView = [[EmojeInputView alloc]initWithFrame:CGRectMake(0,[UIScreen mainScreen].bounds.size.height-250, [UIScreen mainScreen].bounds.size.width, 250)];
+                [self.view addSubview:self.faceView];
+                [self.faceView reloadDataWithArray:self.emojDataArray];
+                self.mesBottomView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-self.faceView.height-self.mesBottomView.height, self.mesBottomView.width, self.mesBottomView.height);
+            }else{
+                [self.faceView removeFromSuperview];
+                self.mesBottomView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height-self.keyBoardHeight-self.mesBottomView.height, self.mesBottomView.width, self.mesBottomView.height);
+            }
+        }else{
+            if (self.faceView) {
+                [self.faceView removeFromSuperview];
+            }
+            self.mesBottomView.transform = CGAffineTransformMakeTranslation(0, transformY);
+            self.MesDetailTab.height = CGRectGetMinY(self.mesBottomView.frame);
+        }
+            }];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -125,6 +212,11 @@
     if (self.dataArray.count>1) {
         [self.MesDetailTab scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
         }
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+       self.isChangeKey = NO;
+       return YES;
 }
 
 - (void)didReceiveMemoryWarning {

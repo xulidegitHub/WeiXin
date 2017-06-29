@@ -49,8 +49,8 @@
             <connections>
                 <outlet property="inputTextView" destination="xEh-kG-NNm" id="pZx-tN-wip"/>
                 <outlet property="leftTip" destination="eAA-hc-tlR" id="Gke-QH-sIp"/>
-                <outlet property="rightSecondTip" destination="vXf-Dl-Y5F" id="u3q-N8-S9A"/>
-                <outlet property="rightTip" destination="Oa5-A8-1GG" id="1FW-KL-wvx"/>
+                <outlet property="rightSecondTip" destination="Oa5-A8-1GG" id="qgf-4k-1MM"/>
+                <outlet property="rightTip" destination="vXf-Dl-Y5F" id="cdY-rX-e91"/>
             </connections>
             <point key="canvasLocation" x="8.5" y="-223.5"/>
         </view>

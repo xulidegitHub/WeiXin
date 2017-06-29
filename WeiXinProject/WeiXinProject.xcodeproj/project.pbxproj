@@ -26,6 +26,8 @@
 		630E73061EB04FB8001ED289 /* XLFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E73031EB04FB8001ED289 /* XLFriendsViewController.m */; };
 		630E730C1EB07CC1001ED289 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E730B1EB07CC1001ED289 /* UIView+Frame.m */; };
 		630E730F1EB082D1001ED289 /* FriendsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E730E1EB082D1001ED289 /* FriendsHeadView.m */; };
+		631D8C8B1F04AA1500300983 /* CorderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D8C8A1F04AA1500300983 /* CorderManager.m */; };
+		631D8C8E1F04D53000300983 /* UIColor+BBVoiceRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D8C8D1F04D53000300983 /* UIColor+BBVoiceRecord.m */; };
 		631FEA6C1EF38194004D5C17 /* FriendsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FEA6B1EF38194004D5C17 /* FriendsListModel.m */; };
 		633AE6D81EF22AF4005B4456 /* PicListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633AE6D71EF22AF4005B4456 /* PicListView.m */; };
 		6345C92D1EFCB5A80000B58B /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 6345C92C1EFCB5A80000B58B /* NSString+Common.m */; };
@@ -101,6 +103,10 @@
 		630E730B1EB07CC1001ED289 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		630E730D1EB082D1001ED289 /* FriendsHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsHeadView.h; sourceTree = "<group>"; };
 		630E730E1EB082D1001ED289 /* FriendsHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsHeadView.m; sourceTree = "<group>"; };
+		631D8C891F04AA1500300983 /* CorderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorderManager.h; sourceTree = "<group>"; };
+		631D8C8A1F04AA1500300983 /* CorderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorderManager.m; sourceTree = "<group>"; };
+		631D8C8C1F04D53000300983 /* UIColor+BBVoiceRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BBVoiceRecord.h"; sourceTree = "<group>"; };
+		631D8C8D1F04D53000300983 /* UIColor+BBVoiceRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BBVoiceRecord.m"; sourceTree = "<group>"; };
 		631FEA6A1EF38194004D5C17 /* FriendsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListModel.h; sourceTree = "<group>"; };
 		631FEA6B1EF38194004D5C17 /* FriendsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListModel.m; sourceTree = "<group>"; };
 		633AE6D61EF22AF4005B4456 /* PicListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicListView.h; sourceTree = "<group>"; };
@@ -485,6 +491,7 @@
 		630E73071EB07501001ED289 /* Until */ = {
 			isa = PBXGroup;
 			children = (
+				631D8C881F04AA1500300983 /* Manager */,
 				630E73091EB07CA2001ED289 /* Category */,
 				630E73081EB0750B001ED289 /* GlobalDefines.h */,
 			);
@@ -494,12 +501,23 @@
 		630E73091EB07CA2001ED289 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				631D8C8C1F04D53000300983 /* UIColor+BBVoiceRecord.h */,
+				631D8C8D1F04D53000300983 /* UIColor+BBVoiceRecord.m */,
 				630E730A1EB07CC1001ED289 /* UIView+Frame.h */,
 				630E730B1EB07CC1001ED289 /* UIView+Frame.m */,
 				6345C92B1EFCB5A80000B58B /* NSString+Common.h */,
 				6345C92C1EFCB5A80000B58B /* NSString+Common.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		631D8C881F04AA1500300983 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				631D8C891F04AA1500300983 /* CorderManager.h */,
+				631D8C8A1F04AA1500300983 /* CorderManager.m */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		A1A0CA98A012CE604285830F /* Frameworks */ = {
@@ -580,7 +598,7 @@
 				TargetAttributes = {
 					630E72931EB03E27001ED289 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					630E72AF1EB03E27001ED289 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -702,6 +720,7 @@
 				638E5EA71EF7DF4D000FDB1D /* AddressModel.m in Sources */,
 				630E730C1EB07CC1001ED289 /* UIView+Frame.m in Sources */,
 				630E72F91EB04376001ED289 /* XLAddressListViewController.m in Sources */,
+				631D8C8B1F04AA1500300983 /* CorderManager.m in Sources */,
 				6358718A1F00A9C300FD3BA1 /* emojContentCell.m in Sources */,
 				630E72D31EB04236001ED289 /* XLBaseViewController.m in Sources */,
 				6345C92D1EFCB5A80000B58B /* NSString+Common.m in Sources */,
@@ -709,6 +728,7 @@
 				635871821F00A1CD00FD3BA1 /* EmojeInputView.m in Sources */,
 				630E730F1EB082D1001ED289 /* FriendsHeadView.m in Sources */,
 				63681F4A1EFA2552001CED67 /* MessageDetailCell.m in Sources */,
+				631D8C8E1F04D53000300983 /* UIColor+BBVoiceRecord.m in Sources */,
 				636CBE851EF0E37A00DD4623 /* FriendsCellTableViewCell.m in Sources */,
 				630E72ED1EB04306001ED289 /* XLMessageViewController.m in Sources */,
 				630E72A51EB03E27001ED289 /* WeiXinProject.xcdatamodeld in Sources */,
@@ -809,6 +829,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiXinProject/Until/GlobalDefines.h";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -854,6 +875,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WeiXinProject/Until/GlobalDefines.h";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -872,10 +894,12 @@
 			baseConfigurationReference = D354CADBC4B948E93F51A3C5 /* Pods-WeiXinProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeiXinProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xuli.WeiXinProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -884,10 +908,12 @@
 			baseConfigurationReference = D4E6770088FCAA99DC489719 /* Pods-WeiXinProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeiXinProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xuli.WeiXinProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

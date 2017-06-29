@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface emojContentCell : UICollectionViewCell
-
+-(void)setEmojDataArray:(NSArray*)emojDataArray;
 @end

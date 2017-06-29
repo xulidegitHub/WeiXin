@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void(^didClickEmojBtn)(NSInteger index);
 @interface sendMesBottomView : UIView
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;
+@property (nonatomic,copy)didClickEmojBtn clickEmojBtnBLock;
 @end

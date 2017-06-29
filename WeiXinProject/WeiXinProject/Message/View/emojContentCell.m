@@ -9,15 +9,28 @@
 #import "emojContentCell.h"
 #import "emojContentSingleCollectionViewCell.h"
 @interface emojContentCell()<UICollectionViewDataSource,UICollectionViewDelegate>
-@property (weak, nonatomic) IBOutlet UICollectionView *emojontentCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *emojcontentCollectionView;
+@property (strong, nonatomic) NSArray *dataArray;
 
 @end
 @implementation emojContentCell
 
+-(NSArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [NSArray array];
+    }
+    return _dataArray;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.emojontentCollectionView.delegate = self;
-    self.emojontentCollectionView.dataSource = self;
+    UICollectionViewFlowLayout *flowLayOut = [[UICollectionViewFlowLayout alloc] init];
+    flowLayOut.itemSize = CGSizeMake(35,35);
+    flowLayOut.minimumInteritemSpacing = ([UIScreen mainScreen].bounds.size.width-35*7)/6;
+    self.emojcontentCollectionView.delegate = self;
+    self.emojcontentCollectionView.dataSource = self;
+    [self.emojcontentCollectionView registerNib:[UINib nibWithNibName:@"emojContentSingleCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cellSingleID"];
+    self.emojcontentCollectionView.collectionViewLayout = flowLayOut;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -25,14 +38,16 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 49;
+    return self.dataArray.count;
+}
+
+-(void)setEmojDataArray:(NSArray*)emojDataArray{
+    self.dataArray = emojDataArray;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     emojContentSingleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellSingleID" forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"emojContentSingleCollectionViewCell" owner:self options:nil].lastObject;
-    }
+    [cell setImageWithData:(UIImage*)self.dataArray[indexPath.row] andIndex:indexPath.row];
     return cell;
 }
 @end

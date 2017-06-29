@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"我";
     self.view.backgroundColor = [UIColor whiteColor];
     self.label = [[UILabel alloc] init];
     self.label.backgroundColor = [UIColor grayColor];

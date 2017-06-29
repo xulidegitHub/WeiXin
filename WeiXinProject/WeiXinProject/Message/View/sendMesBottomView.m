@@ -17,15 +17,40 @@
 @implementation sendMesBottomView
 -(void)awakeFromNib{
     [super awakeFromNib];
+    self.leftTip.tag = 1001;
+    self.rightTip.tag = 1002;
+    self.rightSecondTip.tag = 1003;
     self.inputTextView.layer.cornerRadius = 0.5;
+    self.leftTip.userInteractionEnabled = YES;
     self.rightSecondTip.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didClickEmojBtn)];
-    [self.rightTip addGestureRecognizer:tap];
+    self.rightTip.userInteractionEnabled = YES;
+    UITapGestureRecognizer *emojGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didClickEmojBtn)];
+    [self.rightTip addGestureRecognizer:emojGesture];
+    UITapGestureRecognizer *recordGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didClickRecordBtn)];
+    [self.leftTip addGestureRecognizer:recordGesture];
+    UITapGestureRecognizer *inputGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didClickInputBtn)];
+    [self.rightSecondTip addGestureRecognizer:inputGesture];
 }
 
 -(void)didClickEmojBtn{
-
+    if (_clickEmojBtnBLock) {
+        _clickEmojBtnBLock(self.rightTip.tag);
+    }
 
 }
+
+-(void)didClickRecordBtn{
+    if (_clickEmojBtnBLock) {
+        _clickEmojBtnBLock(self.leftTip.tag);
+    }
+}
+
+-(void)didClickInputBtn{
+    if (_clickEmojBtnBLock) {
+        _clickEmojBtnBLock(self.rightSecondTip.tag);
+    }
+}
+
+
 
 @end

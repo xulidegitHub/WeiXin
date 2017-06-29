@@ -24,4 +24,5 @@
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 #define DECLARE_WEAK_SELF __typeof(&*self) __weak weakSelf = self
 #define DECLARE_STRONG_SELF __typeof(&*self) __strong strongSelf = weakSelf
+#define tintGreenColor SDColor(26,178,11,1)
 #endif
