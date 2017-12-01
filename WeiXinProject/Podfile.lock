@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - HyphenateLite (3.3.2)
   - LFDBusFrameWork (0.1.4)
   - Mantle (2.1.0):
     - Mantle/extobjc (= 2.1.0)
@@ -38,6 +39,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - HyphenateLite
   - LFDBusFrameWork
   - Masonry
   - MJRefresh
@@ -47,6 +49,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  HyphenateLite: 54ffda162deec2cedf156185a707b86678ae914a
   LFDBusFrameWork: 5b2b6c8719d1388c8b5a6e6004dc1dc2f086a0c4
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
@@ -56,6 +59,6 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   textFrameWork: 14dc028db9ef45cc1a882305df51a3ad2d197989
 
-PODFILE CHECKSUM: 519fcd9a3118de4f31f490f74981e924f52bec47
+PODFILE CHECKSUM: 2eb76f4e89347d3e63b1b6ab78e0686cb669eb97
 
 COCOAPODS: 1.2.1

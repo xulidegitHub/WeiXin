@@ -8,47 +8,101 @@
 
 #import "XLMineViewController.h"
 #import <Masonry.h>
-@interface XLMineViewController ()
-@property (nonatomic, strong) UILabel *label;
+@interface XLMineViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic, strong) UITableView *mineTableView;
+@property (nonatomic,strong) NSArray *dataArray;
 @end
 
 @implementation XLMineViewController
+-(NSArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = @[
+                       @{@"firstSection":@[
+                                 @{
+                                    @"leftIconName":@"",
+                                    @"userName":@"徐丽",
+                                    @"userNumber":  @"微信号:xuli18211658058",
+                                    }
+                        ]},
+                       @{@"secondSection":@[
+                                 @{
+                                     @"leftIconName":@"",
+                                     @"userName":@"钱包",
+                                     @"userNumber":  @"",
 
+                                     }
+                                 ]},
+                       @{@"thirdSection":@[
+                                 @{
+                                     @"leftIconName":@"",
+                                     @"userName":@"收藏",
+                                     @"userNumber":  @"",
+                                     
+                                     },
+                                 @{
+                                     @"leftIconName":@"",
+                                     @"userName":@"相册",
+                                     @"userNumber":  @"",
+                                     
+                                     },
+                                 @{
+                                     @"leftIconName":@"",
+                                     @"userName":@"卡包",
+                                     @"userNumber":  @"",
+                                     
+                                     },
+                                 @{
+                                     @"leftIconName":@"",
+                                     @"userName":@"表情",
+                                     @"userNumber":  @"",
+                                     
+                                     },
+
+
+                                 
+                                 ]},
+                       @{@"forthSection":@[
+                                 @{
+                                     @"leftIconName":@"",
+                                     @"userName":@"设置",
+                                     @"userNumber":  @"",
+                                     
+                                     },
+                                 
+                                 ]}
+                       ];
+    
+    }
+    
+    return _dataArray;
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"我";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.label = [[UILabel alloc] init];
-    self.label.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:self.label];
-    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(100);
-        make.top.equalTo(self.view).offset(100);
-        make.height.mas_equalTo(40);
-    }];
-    self.label.text = @"ni";
-    UIButton *btn = [[UIButton alloc] init];
-    [self.view addSubview:btn];
-    [btn addTarget:self action:@selector(didClickBtn) forControlEvents:UIControlEventTouchUpInside];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(100);
-        make.top.equalTo(self.label).offset(100);
-        make.size.mas_equalTo(CGSizeMake(100, 100));
-    }];
-    btn.backgroundColor = [UIColor redColor];
-    UILabel *heightLabel = [[UILabel alloc] init];
-    heightLabel.numberOfLines = 0;
-    [self.view addSubview:heightLabel];
-    [heightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(110);
-        make.right.equalTo(self.view).offset(-50);
-        make.top.equalTo(btn.mas_bottom).offset(50);
-    }];
-    heightLabel.text = @"lksdfjklasdjflkasjdfkljasdklfdskfjksjflasjdfklasdjkalsjdfkljalkdjfakljdfklasjdfklajsdfksaldjfaklsdjf你好";
+    self.mineTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
+    self.mineTableView.dataSource = self;
+    self.mineTableView.delegate = self;
+    [self.view addSubview:self.mineTableView];
+ 
 }
 
--(void)didClickBtn{
-    self.label.text = [NSString stringWithFormat:@"你好+%@",self.label.text];
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellID"];
+    }
+    cell.textLabel.text = @"nihao";
+    return cell;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

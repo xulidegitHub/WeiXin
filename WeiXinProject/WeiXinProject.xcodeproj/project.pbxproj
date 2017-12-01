@@ -28,10 +28,14 @@
 		630E730F1EB082D1001ED289 /* FriendsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E730E1EB082D1001ED289 /* FriendsHeadView.m */; };
 		631D8C8B1F04AA1500300983 /* CorderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D8C8A1F04AA1500300983 /* CorderManager.m */; };
 		631D8C8E1F04D53000300983 /* UIColor+BBVoiceRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D8C8D1F04D53000300983 /* UIColor+BBVoiceRecord.m */; };
+		631D8C921F04DC4E00300983 /* XLMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D8C901F04DC4E00300983 /* XLMineCell.m */; };
+		631D8C931F04DC4E00300983 /* XLMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631D8C911F04DC4E00300983 /* XLMineCell.xib */; };
 		631FEA6C1EF38194004D5C17 /* FriendsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 631FEA6B1EF38194004D5C17 /* FriendsListModel.m */; };
 		633AE6D81EF22AF4005B4456 /* PicListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633AE6D71EF22AF4005B4456 /* PicListView.m */; };
 		6345C92D1EFCB5A80000B58B /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 6345C92C1EFCB5A80000B58B /* NSString+Common.m */; };
 		6345C9301EFCEEBB0000B58B /* ChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6345C92F1EFCEEBB0000B58B /* ChatModel.m */; };
+		634F7A2F1F0C8B840035B69E /* TransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F7A2C1F0C8B840035B69E /* TransitionAnimation.m */; };
+		634F7A301F0C8B840035B69E /* TransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 634F7A2E1F0C8B840035B69E /* TransitionController.m */; };
 		635871821F00A1CD00FD3BA1 /* EmojeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 635871811F00A1CD00FD3BA1 /* EmojeInputView.m */; };
 		6358718A1F00A9C300FD3BA1 /* emojContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635871881F00A9C300FD3BA1 /* emojContentCell.m */; };
 		6358718B1F00A9C300FD3BA1 /* emojContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635871891F00A9C300FD3BA1 /* emojContentCell.xib */; };
@@ -107,6 +111,9 @@
 		631D8C8A1F04AA1500300983 /* CorderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorderManager.m; sourceTree = "<group>"; };
 		631D8C8C1F04D53000300983 /* UIColor+BBVoiceRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BBVoiceRecord.h"; sourceTree = "<group>"; };
 		631D8C8D1F04D53000300983 /* UIColor+BBVoiceRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BBVoiceRecord.m"; sourceTree = "<group>"; };
+		631D8C8F1F04DC4E00300983 /* XLMineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLMineCell.h; sourceTree = "<group>"; };
+		631D8C901F04DC4E00300983 /* XLMineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLMineCell.m; sourceTree = "<group>"; };
+		631D8C911F04DC4E00300983 /* XLMineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XLMineCell.xib; sourceTree = "<group>"; };
 		631FEA6A1EF38194004D5C17 /* FriendsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListModel.h; sourceTree = "<group>"; };
 		631FEA6B1EF38194004D5C17 /* FriendsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListModel.m; sourceTree = "<group>"; };
 		633AE6D61EF22AF4005B4456 /* PicListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicListView.h; sourceTree = "<group>"; };
@@ -115,6 +122,10 @@
 		6345C92C1EFCB5A80000B58B /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
 		6345C92E1EFCEEBB0000B58B /* ChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatModel.h; sourceTree = "<group>"; };
 		6345C92F1EFCEEBB0000B58B /* ChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatModel.m; sourceTree = "<group>"; };
+		634F7A2B1F0C8B840035B69E /* TransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionAnimation.h; sourceTree = "<group>"; };
+		634F7A2C1F0C8B840035B69E /* TransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimation.m; sourceTree = "<group>"; };
+		634F7A2D1F0C8B840035B69E /* TransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionController.h; sourceTree = "<group>"; };
+		634F7A2E1F0C8B840035B69E /* TransitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionController.m; sourceTree = "<group>"; };
 		635871801F00A1CD00FD3BA1 /* EmojeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojeInputView.h; sourceTree = "<group>"; };
 		635871811F00A1CD00FD3BA1 /* EmojeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojeInputView.m; sourceTree = "<group>"; };
 		635871871F00A9C300FD3BA1 /* emojContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emojContentCell.h; sourceTree = "<group>"; };
@@ -297,6 +308,9 @@
 		630E72DB1EB042DB001ED289 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				631D8C8F1F04DC4E00300983 /* XLMineCell.h */,
+				631D8C901F04DC4E00300983 /* XLMineCell.m */,
+				631D8C911F04DC4E00300983 /* XLMineCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -491,6 +505,7 @@
 		630E73071EB07501001ED289 /* Until */ = {
 			isa = PBXGroup;
 			children = (
+				634F7A2A1F0C8B770035B69E /* Animation */,
 				631D8C881F04AA1500300983 /* Manager */,
 				630E73091EB07CA2001ED289 /* Category */,
 				630E73081EB0750B001ED289 /* GlobalDefines.h */,
@@ -518,6 +533,17 @@
 				631D8C8A1F04AA1500300983 /* CorderManager.m */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		634F7A2A1F0C8B770035B69E /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				634F7A2B1F0C8B840035B69E /* TransitionAnimation.h */,
+				634F7A2C1F0C8B840035B69E /* TransitionAnimation.m */,
+				634F7A2D1F0C8B840035B69E /* TransitionController.h */,
+				634F7A2E1F0C8B840035B69E /* TransitionController.m */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		A1A0CA98A012CE604285830F /* Frameworks */ = {
@@ -640,6 +666,7 @@
 				630E72AA1EB03E27001ED289 /* LaunchScreen.storyboard in Resources */,
 				63681F441EFA17A7001CED67 /* MessageListCell.xib in Resources */,
 				6358718B1F00A9C300FD3BA1 /* emojContentCell.xib in Resources */,
+				631D8C931F04DC4E00300983 /* XLMineCell.xib in Resources */,
 				63681F4F1EFA4EF9001CED67 /* sendMesBottomView.xib in Resources */,
 				630E72A71EB03E27001ED289 /* Assets.xcassets in Resources */,
 				63FAA3741EFB6D6D00D14F75 /* pic.bundle in Resources */,
@@ -722,12 +749,14 @@
 				630E72F91EB04376001ED289 /* XLAddressListViewController.m in Sources */,
 				631D8C8B1F04AA1500300983 /* CorderManager.m in Sources */,
 				6358718A1F00A9C300FD3BA1 /* emojContentCell.m in Sources */,
+				634F7A2F1F0C8B840035B69E /* TransitionAnimation.m in Sources */,
 				630E72D31EB04236001ED289 /* XLBaseViewController.m in Sources */,
 				6345C92D1EFCB5A80000B58B /* NSString+Common.m in Sources */,
 				630E729F1EB03E27001ED289 /* ViewController.m in Sources */,
 				635871821F00A1CD00FD3BA1 /* EmojeInputView.m in Sources */,
 				630E730F1EB082D1001ED289 /* FriendsHeadView.m in Sources */,
 				63681F4A1EFA2552001CED67 /* MessageDetailCell.m in Sources */,
+				634F7A301F0C8B840035B69E /* TransitionController.m in Sources */,
 				631D8C8E1F04D53000300983 /* UIColor+BBVoiceRecord.m in Sources */,
 				636CBE851EF0E37A00DD4623 /* FriendsCellTableViewCell.m in Sources */,
 				630E72ED1EB04306001ED289 /* XLMessageViewController.m in Sources */,
@@ -744,6 +773,7 @@
 				630E72F61EB04346001ED289 /* XLMineViewController.m in Sources */,
 				631FEA6C1EF38194004D5C17 /* FriendsListModel.m in Sources */,
 				630E72991EB03E27001ED289 /* main.m in Sources */,
+				631D8C921F04DC4E00300983 /* XLMineCell.m in Sources */,
 				630E72F31EB04338001ED289 /* XLFinderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

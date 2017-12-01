@@ -24,6 +24,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## HyphenateLite
+
+Hyphenate Inc. 2017
+
 ## LFDBusFrameWork
 
 Copyright (c) 2017 1203646961@qq.com <xuli5@le.com>

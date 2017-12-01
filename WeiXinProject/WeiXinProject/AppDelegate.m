@@ -4,71 +4,44 @@
 //
 //  Created by 徐丽 on 17/4/26.
 //  Copyright © 2017年 徐丽. All rights reserved.
-//
-
 #import "AppDelegate.h"
-#import "XLFinderViewController.h"
 #import "XLMainViewController.h"
-#import "XLMessageViewController.h"
-#import "XLAddressListViewController.h"
-#import "XLMineViewController.h"
+//Lite版本
+#import <HyphenateLite/HyphenateLite.h>
+//Full版本
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    XLFinderViewController *finderVc = [[XLFinderViewController alloc]init];
-    UINavigationController *finderNav = [[UINavigationController alloc]initWithRootViewController:finderVc];
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor grayColor], NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:tintGreenColor,NSForegroundColorAttributeName, nil]forState:UIControlStateSelected];
-    finderNav.tabBarItem.title = @"发现";
-    finderNav.tabBarItem.image = [[UIImage imageNamed:@"tabbar_discover"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    finderNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_discoverHL"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    XLMessageViewController *messageVc = [[XLMessageViewController alloc]init];
-    UINavigationController *messageNav = [[UINavigationController alloc]initWithRootViewController:messageVc];
-    messageNav.tabBarItem.title = @"消息";
-    messageNav.tabBarItem.image = [[UIImage imageNamed:@"tabbar_mainframe"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    messageNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_mainframeHL"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    XLMineViewController *mineVc = [[XLMineViewController alloc]init];
-    UINavigationController *mineNav = [[UINavigationController alloc]initWithRootViewController:mineVc];
-    mineNav.tabBarItem.title = @"我的";
-    mineNav.tabBarItem.image = [[UIImage imageNamed:@"tabbar_me"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    mineNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_meHL"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    XLAddressListViewController *addressListVc = [[XLAddressListViewController alloc]init];
-    UINavigationController *addressNav = [[UINavigationController alloc]initWithRootViewController:addressListVc];
-    addressNav.tabBarItem.title = @"通讯录";
-    addressNav.tabBarItem.image = [[UIImage imageNamed:@"tabbar_contacts"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    addressNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_contactsHL"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     XLMainViewController *mainTabbarVc = [[XLMainViewController alloc]init];
-    [mainTabbarVc addChildViewController:messageNav];
-    [mainTabbarVc addChildViewController:addressNav];
-    [mainTabbarVc addChildViewController:finderNav];
-    [mainTabbarVc addChildViewController:mineNav];
     self.window.rootViewController = mainTabbarVc;
     [self.window makeKeyAndVisible];
-   
+    EMOptions *options = [EMOptions optionsWithAppkey:@"douser#istore"];
+    options.apnsCertName = @"istore_dev";
+    [[EMClient sharedClient] initializeSDKWithOptions:options];
     return YES;
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+    // Sent when the application is about to move from active to inactive state. This can occur for  certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [[EMClient sharedClient] applicationDidEnterBackground:application];
+
+
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    [[EMClient sharedClient] applicationWillEnterForeground:application];
+
 }
 
 

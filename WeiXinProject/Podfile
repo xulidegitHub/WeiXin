@@ -8,6 +8,7 @@
     pod 'Masonry'
     pod "textFrameWork"
     pod “NetworkFrameWork”
+    pod “HyphenateLite”
 end
 source 'http://gitlab-jr.letv.cn/iosteam/lefinancepods.git'
 source 'https://github.com/CocoaPods/Specs.git'
